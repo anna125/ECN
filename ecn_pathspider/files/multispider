@@ -104,16 +104,21 @@ def main():
                     if tablematch(addrset, tablekeys) == 1:
                         logger.info("Running PATHSpider on interface: " +
                                     ifname +"\n")
-                        ds=60
-                        while ds < 63:
-                            res_str=savestr+"."+str(ds)
-                            args = ['pathspider', '-i', ifname, '-o', res_str]
-                            args.extend(sys.argv[1:])
-                            logger.info("Pathspider command is: " + " ".join(args)+"\n")
-                            os.environ["DSCP"] = str(ds)
-                            ds += 1
-                            print (os.environ["DSCP"])
-                            subprocess.call(args)
+#                        ds=60
+#                        while ds < 63:
+#                            res_str=savestr+"."+str(ds)
+#                            args = ['pathspider', '-i', ifname, '-o', res_str]
+#                            args.extend(sys.argv[1:])
+#                            logger.info("Pathspider command is: " + " ".join(args)+"\n")
+#                            os.environ["DSCP"] = str(ds)
+#                            ds += 1
+#                            print (os.environ["DSCP"])
+#                            subprocess.call(args)
+                        res_str=savestr+".out"
+                        args = ['pathspider', '-i', ifname, '-o', res_str]
+                        args.extend(sys.argv[1:])
+                        logger.info("Pathspider command is: " + " ".join(args)+"\n")
+                        subprocess.call(args)
                 except Exception as e:
                     logger.error(e)
             #Deletes the route before moving on to the next
