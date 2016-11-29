@@ -11,7 +11,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-instal
 # Install pathspider wrapper
 COPY files/multispider /usr/bin
 COPY files/* /opt/monroe/
-COPY files/ECNASpiderPlugins/ecnaa.py /usr/lib/python3/dist-packages/pathspider/plugins/ecnaa.py
+COPY files/ECNASpiderPlugins/* /opt/monroe/
+COPY files/ECNASpiderPlugins/ecnaa.py /usr/lib/python3/dist-packages/pathspider/plugins/
 RUN cd /opt/monroe
 
 ENTRYPOINT ["dumb-init", "--", "/opt/monroe/experiment.sh"]

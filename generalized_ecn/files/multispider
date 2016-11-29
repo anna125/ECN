@@ -97,7 +97,7 @@ def main():
             for a in s:
                 addrset = ip.interfaces[a].ipaddr
                 ifname = ip.interfaces[a].ifname
-                savestr= "tmp/output." +str(ifname)
+                savestr= "/tmp/output." +str(ifname)
                 print("Interface is" + ifname + "\n")
                 tablekeys = ip.routes.tables[i].keys()
                 try:
