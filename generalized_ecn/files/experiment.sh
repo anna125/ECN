@@ -2,5 +2,5 @@
 
 mkdir /monroe/
 mkdir /monroe/results
-/usr/bin/multispider -p ECNSpider1 -I /opt/monroe/input_test.csv -o /tmp/ECNASpider1.txt
+/usr/bin/multispider -p ECNSpiderA -I /opt/monroe/input_test.csv -o /tmp/ECNSpider.txt
 mv /tmp/* /monroe/results/
