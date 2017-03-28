@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#use:sudo ./run80.sh nameinterface
+#use:sudo ./run.sh nameinterface
 chmod 777 sync.sh
 
 ./run80.sh wwan0
